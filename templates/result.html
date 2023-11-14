@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Information</title>
+</head>
+<body>
+    <h1>Device Information</h1>
+    <table border="1">
+        <tr>
+            <th>IP-адрес</th>
+            <th>Дистрибутив</th>
+            <th>Версия дистрибутива</th>
+            <th>Имя системы</th>
+            <th>Модель процессора</th>
+            <th>Количество ядер</th>
+            <th>Архитектура системы</th>
+            <th>Количество оперативной памяти</th>
+        </tr>
+            <tr>
+                <th>{{ ip }}</th>
+                <td>{{ info[0] }}</td>
+                <td>{{ info[1] }}</td>
+                <td>{{ info[2] }}</td>
+                <td>{{ info[3] }}</td>
+                <td>{{ info[4] }}</td>
+                <td>{{ info[5] }}</td>
+                <td>{{ info[6] }}</td>
+            </tr>
+    </table>
+    <form method="post" action="/save_result">
+        <input type="hidden" name="info[]" value="{{ ip }}">
+        <input type="hidden" name="info[]" value="{{ info[0] }}">
+        <input type="hidden" name="info[]" value="{{ info[1] }}">
+        <input type="hidden" name="info[]" value="{{ info[2] }}">
+        <input type="hidden" name="info[]" value="{{ info[3] }}">
+        <input type="hidden" name="info[]" value="{{ info[4] }}">
+        <input type="hidden" name="info[]" value="{{ info[5] }}">
+        <input type="hidden" name="info[]" value="{{ info[6] }}">
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

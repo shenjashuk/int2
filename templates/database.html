@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Information</title>
+</head>
+<body>
+    <form action="/connection">
+        <input type="submit" value="Подключится к устройству">
+    </form>
+    <h1>Device Information</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>IP-адрес</th>
+            <th>Дистрибутив</th>
+            <th>Версия дистрибутива</th>
+            <th>Имя системы</th>
+            <th>Модель процессора</th>
+            <th>Количество ядер</th>
+            <th>Архитектура системы</th>
+            <th>Количество оперативной памяти</th>
+        </tr>
+        {% for device in devices %}
+            <tr>
+                <td>{{ device[0] }}</td>
+                <td>{{ device[1] }}</td>
+                <td>{{ device[2] }}</td>
+                <td>{{ device[3] }}</td>
+                <td>{{ device[4] }}</td>
+                <td>{{ device[5] }}</td>
+                <td>{{ device[6] }}</td>
+                <td>{{ device[7] }}</td>
+                <td>{{ device[8] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
